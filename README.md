@@ -10,6 +10,11 @@ This two-in-one work mimicks both tabular data (see medgan_tabular model) and se
 
 While the work was initially designed for healthcare, the models can actually inspire ideas for other applications, when it does not solve the problem outright.
 
+## Models used
+Each method takes profit of deep learning to generate synthetic data. The main idea is to reduce the problem's dimension using a Variational AutoEncoder (VAE) and create a latent space to embed medical events from a discrete, high-dimensional distribution to a real, lower-dimensional one. Then, a Generative Adversarial Network (GAN) uses this latent space, more specifically the Decoder of the VAE, to both generate synthetic patients and discriminate them from real ones, in the usual adversarial loop for GANs.
+
+In the case of the tabular model, both the Generator and the Discriminator are based on Dense (e.g fully-connected) layers, while in the sequential one, they are based on LSTM (Long Short-Term Memory) layers.
+
 ## Reference
 Each of these methods are inspired by the following article :
   Generating Multi-label Discrete Patient Records using Generative Adversarial Networks
